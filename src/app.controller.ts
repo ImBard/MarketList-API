@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -13,4 +13,12 @@ export class AppController {
   getTeste(): any {
     return this.appService.getTeste();
   }
+
+  @Post('cadastrar')
+  cadastrar(): Promise<any>{
+    return <any>{
+      mensagem: "Salvou"
+    }
+  }
+
 }
